@@ -1,0 +1,26 @@
+﻿<Window x:Class="XKCD_Reader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:paz="https://github.com/panandzoom"
+        Title="XKCD Reader" Height="467.143" Width="693.929">
+    <Grid>
+        <Button Name="btnPrevious" Content="Previous" Margin="0,0,165,10.5" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74" Click="btnPrevious_Click"/>
+        <Button Name="btnNext" Content="Next" Margin="0,0,6,10.5" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="btnNext_Click"/>
+        <Grid Margin="448,15,11.2,390.6">
+            <Viewbox>
+                <Label Name="lblTitle" Content="Title" FontSize="20" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalAlignment="Top" HorizontalAlignment="Right" Width="Auto" Background="{x:Null}"/>
+            </Viewbox>
+        </Grid>
+        <Label Name="lblNumber" Content="Label" Margin="0,33,11,0" HorizontalAlignment="Right" Width="228" HorizontalContentAlignment="Center" VerticalAlignment="Top"/>
+        <TextBox Name="lblAlt" IsReadOnly="True" VerticalScrollBarVisibility="Auto" TextWrapping="Wrap" Margin="0,64,11,0" HorizontalAlignment="Right" Width="228" Height="166" VerticalAlignment="Top"/>
+        <Button Name="btnBrowser" Content="Open in Browser" Margin="0,235,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="229" Click="btnBrowser_Click"/>
+        <TextBox Name ="txtUrl" Height="24" Margin="0,260,10,0" IsReadOnly="True" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="229"/>
+        <paz:ZoomBorder Name="zoomBorder"  ZoomSpeed="1.2" 
+                        ClipToBounds="True"
+                        VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="10,10,246.5,9.5">
+            <Image x:Name="imageDisplay" RenderOptions.BitmapScalingMode="Fant"/>
+        </paz:ZoomBorder>
+        <Button Name="btnReset" Content="Reset View" HorizontalAlignment="Right" Margin="0,0,165,35.5" Width="74" Click="btnReset_Click" Height="20" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnRandom" Content="Random" Margin="0,0,86,10.5" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="74" Click="btnRandom_Click"/>
+    </Grid>
+</Window>
